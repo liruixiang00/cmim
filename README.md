@@ -8,11 +8,6 @@ Requirements:
 - Standard C++ libraries
 - Before running, extract opencv_world455.zip to generate opencv_world455.dll
 
-Build instructions:
-1. Clone the repository or copy the source code.
-2. Create a build directory and compile using g++:
-   g++ -std=c++17 main.cpp RunningCMIM.cpp -o MatchCMIM `pkg-config --cflags --libs opencv4`
-
 Usage:
 ./MatchCMIM <image1> <image2> <output_pts> [num_features]
 
