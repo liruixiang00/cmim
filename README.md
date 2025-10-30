@@ -63,50 +63,6 @@ g++ -std=c++17 main.cpp RunningCMIM.cpp -o MatchCMIM `pkg-config --cflags --libs
 
 ---
 
-## Workflow
-
-The CMIM matching pipeline consists of the following steps:
-
-```
-Input Images
-   │
-   ▼
-Convert to Grayscale (if needed)
-   │
-   ▼
-Compute G1 Steerable Hermite Filter Responses
-   │
-   ▼
-Compute NISM (Normalized Index of Steerable Modulations) Maps
-   │
-   ▼
-Detect FAST Keypoints on NISM / Principal Moment Map
-   │
-   ▼
-Compute Descriptors for Keypoints
-   │
-   ▼
-Brute-force Descriptor Matching (L2 distance)
-   │
-   ▼
-FSC Filtering (remove inconsistent matches)
-   │
-   ▼
-Output Matched Keypoints (.pts)
-```
-
-### Modules
-
-| Module                          | Description                                                                       |
-| ------------------------------- | --------------------------------------------------------------------------------- |
-| `G1SteerableFiltersConvolution` | Computes first-order Hermite filter responses at multiple scales and orientations |
-| `NISM`                          | Generates robust feature modulation maps from filter responses                    |
-| `DetecteFASTFeatures`           | Detects salient keypoints on NISM maps                                            |
-| `GetDescriptor`                 | Extracts patch-based descriptors from NISM maps for each keypoint                 |
-| `BFMatcher + FSC_similarity`    | Matches descriptors and filters out outliers                                      |
-
----
-
 ## Output
 
 * `.pts` file containing matched keypoints in the format:
@@ -115,32 +71,4 @@ Output Matched Keypoints (.pts)
 x1 y1 x2 y2
 ```
 
-Each line represents a matched keypoint pair: coordinates in the first image followed by coordinates in the second image.
-
 ---
-
-## Notes
-
-* If either input image is grayscale, it is automatically converted to BGR internally.
-* The program prints:
-
-  * Number of initial matches
-  * Number of correct matches after FSC filtering
-  * Elapsed time in seconds
-* Default **patch size** for descriptors is 84.
-* Default **number of features** is 5000 unless overridden.
-
----
-
-## License
-
-MIT License — free to use for academic and commercial purposes.
-
-```
-
-你可以直接 **复制这个整个块** 到 `README.md` 文件里即可使用。  
-
-如果你需要，我可以再帮你 **加一张可视化流程图** 的 Markdown 链接版本，让 README 更直观。  
-
-你希望我加吗？
-```
