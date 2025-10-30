@@ -1,6 +1,6 @@
 CMIM Image Matching Tool performs robust feature-based matching between two images using a CMIM approach with Steerable Hermite Filters. It supports a configurable number of feature points and outputs matched keypoints to a .pts file.
 
-The program detects keypoints using the FAST detector on the principal moment map, computes descriptors using NISM maps derived from first-order steerable Hermite filters, matches features using brute-force L2 descriptor matching, and filters matches using FSC (Feature Similarity Consistency) to remove outliers. Users can control the number of features via command line.
+The program detects keypoints using the FAST detector on the principal moment map, computes descriptors using orientation index maps derived from first-order steerable Hermite filters, matches features using brute-force L2 descriptor matching, and filters matches using FSC (Feature Similarity Consistency) to remove outliers. Users can control the number of features via command line.
 
 Requirements:
 - C++17 or later
