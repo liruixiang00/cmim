@@ -1,4 +1,3 @@
-明白，你希望把整个 README 内容放到一个 **单独的代码块**，方便直接复制到文件或编辑器里。下面是完整的 README 内容，已经放在一个 Markdown 代码块里：
 
 ````markdown
 # CMIM Image Matching Tool
