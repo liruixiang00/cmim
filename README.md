@@ -27,3 +27,9 @@ Examples:
 Output:
 The .pts file contains matched feature points in the format:
 x1 y1 x2 y2
+
+Dataset download:
+The large-scale MRSI datasets are shared via Baidu Netdisk:
+Link: https://pan.baidu.com/s/1oJvs8qWMRtRN02yK6_mJ5A
+Extraction code: u25h
+--Shared by Baidu Netdisk Super Member v5
